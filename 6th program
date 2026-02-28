@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int cmp(const void *a, const void *b) {
+    return (*(int*)a - *(int*)b);
+}
+
+int main() {
+    int a[] = {3,3,3,3,3};   // change test case here
+    int n = 5;
+
+    if(n == 0) {
+        printf("None (Empty List)");
+        return 0;
+    }
+
+    qsort(a, n, sizeof(int), cmp);
+    printf("%d", a[n-1]);   // maximum element
+
+    return 0;
+}
