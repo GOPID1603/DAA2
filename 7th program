@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int a[] = {3, 7, 3, 5, 2, 5, 9, 2};  // Change test case here
+    int n = 8;
+
+    int unique[100], k = 0;
+    int i, j, found;
+
+    for(i = 0; i < n; i++) {
+        found = 0;
+
+        for(j = 0; j < k; j++) {
+            if(a[i] == unique[j]) {
+                found = 1;
+                break;          // stop if duplicate found
+            }
+        }
+
+        if(!found) {
+            unique[k] = a[i];
+            k++;
+        }
+    }
+
+    printf("Unique elements: ");
+    for(i = 0; i < k; i++)
+        printf("%d ", unique[i]);
+
+    return 0;
+}
